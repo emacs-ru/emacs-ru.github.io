@@ -124,18 +124,91 @@
 </aside>
 <article class="doc">
 <h1 class="page">Встроенные пакеты</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>В этом разделе представлены описания встроенных пакетов.</p>
+<p>В этом разделе представлены описания встроенных пакетов.
+Эти пакеты входят в состав GNU Emacs и доступны без установки.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="upgrade"><a class="anchor" href="#upgrade"></a>Обновление</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Возможно, вы захотите обновить встроенные пакеты.
+В этом случае делайте так:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните команду <code>eval-expression</code>, <kbd>C-:</kbd>.</p>
+</li>
+<li>
+<p>Введите выражение:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">(setopt package-install-upgrade-built-in t)</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Нажмите <kbd>RET</kbd>.</p>
+</li>
+<li>
+<p>Выполните команду <code>list-packages</code>.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p><code>package.el</code> покажет большое количество пакетов, которые можно обновить.</p>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Нажмите <kbd>U</kbd>, чтобы выделить все пакеты, но <strong>не</strong> нажимайте <kbd>x</kbd>.</p>
+</li>
+<li>
+<p>Отфильтруйте пакеты по статусу: <kbd>/ m</kbd>.</p>
+</li>
+<li>
+<p>С помощью клавиши <kbd>u</kbd> снимите выделение со всех пакетов, кроме тех, которые нужно обновить.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Как понять, что пакет нужно обновить? Нужно ответить "Да" на два вопроса:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="rst.html#rst" class="xref page">packages:builtin/rst.adoc#rst</a></p>
+<p>Я знаю для чего нужен этот пакет?</p>
 </li>
 <li>
-<p><a href="which-key.html#which-key" class="xref page">packages:builtin/which-key.adoc#which-key</a></p>
+<p>Это обновление действительно необходимо?</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Важно"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Без необходимости не обновляйте встроенные пакеты!
+Тем более не обновляйте пакеты, если не знаете, для чего они нужны!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="../index.html">Пакеты</a></span>
