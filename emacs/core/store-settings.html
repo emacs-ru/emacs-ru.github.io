@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Хранение настроек :: GNU Emacs по-русски</title>
+    <link rel="canonical" href="https://emacs-ru.github.io/emacs/core/store-settings.html">
+    <link rel="prev" href="modes.html">
+    <link rel="next" href="customize.html">
+    <meta name="generator" content="Antora 3.1.12">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://emacs-ru.github.io">GNU Emacs по-русски</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="emacs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">GNU Emacs по-русски</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Добро пожаловать!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Основы</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="installation.html">Установка</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="keys.html">Клавиши</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="commands.html">Команды</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modes.html">Режимы</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="store-settings.html">Хранение настроек</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="customize.html">Customize</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">Глоссарий</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../packages/index.html">Пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../packages/builtin/index.html">Встроенные пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../packages/builtin/rst.html"><code>rst.el</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../packages/builtin/which-key.html">which-key</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GNU Emacs по-русски</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">GNU Emacs по-русски</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">GNU Emacs по-русски</a></li>
+    <li><a href="index.html">Основы</a></li>
+    <li><a href="store-settings.html">Хранение настроек</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///content/modules/ROOT/pages/core/store-settings.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Хранение настроек</h1>
+<div class="paragraph">
+<p>При запуске GNU Emacs проверяет существование следующих файлов:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>~/.emacs.el</code>;</p>
+</li>
+<li>
+<p><code>~/.emacs.d/init.el</code>;</p>
+</li>
+<li>
+<p><code>~/.config/emacs/init.el</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Как только хотя бы один из этих файлов будет найден, поиск остановится, а GNU Emacs загрузит настройки.
+Рассмотрим плюсы и минусы использования того или иного расположения конфигурационного файла.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>~/.emacs.el</code></p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Поскольку этот файл лежит в корне домашнего каталога, им не очень удобно управлять с помощью систем контроля версий.
+Например, в Git для удобной работы вам нужно будет добавить в список игнорирования все остальные файлы и каталоги, хранящиеся в домашнем каталоге.</p>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p><code>~/.emacs.d/init.el</code></p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Удобное решение, поскольку управлять отдельным каталогом с помощью того же Git значительно проще, чем в случае с <code>~/.emacs.el</code>.
+Официальная <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Find-Init.html">документация GNU Emacs</a> предполагает, что вы используете для хранения конфигурации именно файл <code>~/.emacs.d/init.el</code>.</p>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p><code>~/.config/emacs/init.el</code></p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Этот способ будет работать только в том случае, когда определена переменная окружения <code>XDG_CONFIG_HOME</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Такой переменной по умолчанию нет в Microsoft Windows.</p>
+</li>
+<li>
+<p>Эта переменная может быть не определена в используемом окружении на базе *nix, например, при работе на сервере.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Далее считается, что ваш основной конфигурационный файл хранится по пути <code>~/.emacs.d/init.el</code>.</p>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="modes.html">Режимы</a></span>
+  <span class="next"><a href="customize.html">Customize</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

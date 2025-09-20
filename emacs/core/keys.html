@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Клавиши :: GNU Emacs по-русски</title>
+    <link rel="canonical" href="https://emacs-ru.github.io/emacs/core/keys.html">
+    <link rel="prev" href="installation.html">
+    <link rel="next" href="commands.html">
+    <meta name="generator" content="Antora 3.1.12">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://emacs-ru.github.io">GNU Emacs по-русски</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="emacs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">GNU Emacs по-русски</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Добро пожаловать!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Основы</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="installation.html">Установка</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="keys.html">Клавиши</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="commands.html">Команды</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modes.html">Режимы</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="store-settings.html">Хранение настроек</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="customize.html">Customize</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">Глоссарий</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../packages/index.html">Пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../packages/builtin/index.html">Встроенные пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../packages/builtin/rst.html"><code>rst.el</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../packages/builtin/which-key.html">which-key</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GNU Emacs по-русски</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">GNU Emacs по-русски</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">GNU Emacs по-русски</a></li>
+    <li><a href="index.html">Основы</a></li>
+    <li><a href="keys.html">Клавиши</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///content/modules/ROOT/pages/core/keys.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Клавиши</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>При работе с GNU Emacs следует по максимуму использовать клавиатуру и по минимуму&#8201;&#8212;&#8201;мышь.
+Обозначения клавиш в GNU Emacs несут на себе груз наследия 1970-х годов и смущают многих новичков.</p>
+</div>
+<div class="paragraph">
+<p>GNU Emacs разрабатывался как набор сценариев, упрощающих работу с так называемыми LISP-машинами&#8201;&#8212;&#8201;специализированными компьютерами, предназначенными для работы с кодом на языке Lisp.
+Клавиатуры этих компьютеров отличались от современных, и некоторые клавиши там были на других местах.
+Также там были клавиши, которые на современных клавиатурах вы не найдёте.</p>
+</div>
+<div class="paragraph">
+<p>Однако, в GNU Emacs по-прежнему используются обозначения клавиш, соответствующих клавиатурам LISP-машин.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Обозначения клавиш</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Обозначение</th>
+<th class="tableblock halign-left valign-top">LISP-машина</th>
+<th class="tableblock halign-left valign-top">Совр. клавиатура</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>C</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Control</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Ctrl</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>M</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Meta</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Alt</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>A</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Alt</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>S</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Super</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Shift</kbd> или <kbd>Windows</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>H</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Hyper</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>RET</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Return</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Enter</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&lt;up&gt;</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>↑</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>↑</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&lt;down&gt;</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>↓</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>↓</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&lt;left&gt;</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>←</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>←</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&lt;right&gt;</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>→</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>→</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&lt;backspace&gt;</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Backspace</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Backspace</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&lt;del&gt;</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Del</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>Del</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&lt;prior&gt;</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>PgUp</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>PgUp</kbd></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>&lt;next&gt;</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>PgDn</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><kbd>PgDn</kbd></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Обратите внимание на то, что на клавиатурах LISP-машин была клавиша <kbd>Alt</kbd>, но этот <em>не тот</em> <kbd>Alt</kbd>, к которому вы привыкли.</p>
+</div>
+<div class="paragraph">
+<p>Вы часто встретите в документации GNU Emacs или пакетов обозначения сочетаний, использующие клавишу <kbd>S</kbd>.
+Как правило, следует интерпретировать её как <kbd>Shift</kbd>, поскольку клавиша <kbd>Super</kbd> в современных операционных системах зарезервирована для более важных действий, и обычно называется <kbd>Windows</kbd>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="keys-sequences"><a class="anchor" href="#keys-sequences"></a>Сочетания и последовательности</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>В подавляющем случае в современном программном обеспечении используются <em>сочетания клавиш</em> (keyboard shortcut)&#8201;&#8212;&#8201;это набор из нескольких клавиш, которые нужно нажать одновременно.
+Например, <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd></span>, или <span class="keyseq"><kbd>Windows</kbd>+<kbd>E</kbd></span>.</p>
+</div>
+<div class="paragraph">
+<p>В GNU Emacs всё немного сложнее.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Регистр символов имеет значение.</p>
+</li>
+<li>
+<p>Действующая раскладка имеет значение.</p>
+</li>
+<li>
+<p>Клавиши называются ключами (keys).</p>
+</li>
+<li>
+<p>Вместо сочетаний клавиш используются <em>последовательности клавиш</em> (keys sequences).
+Слово «последовательность» в данном случае означает, что клавиши нужно нажимать в определённом порядке.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Примечание"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Если вы любите видеоигры, то знаете, что во многих из них есть комбо&#8201;&#8212;&#8201;последовательность нажатий кнопок, дающая особые возможности.
+Вот это они и есть.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Самый простой пример последовательности&#8201;&#8212;&#8201;это <kbd>C-x C-c</kbd>.
+Такую запись нужно интерпретировать следующим образом:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Нажмите <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>x</kbd></span>.</p>
+</li>
+<li>
+<p>Нажмите <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>c</kbd></span>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Использование последовательностей позволяет связать с ними все нужные команды<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
+Далее для краткости вместо «нажмите сочетание клавиш» или «нажмите последовательность клавиш» будет использоваться сокращённая форма «нажмите».</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="карты-клавиш"><a class="anchor" href="#карты-клавиш"></a>Карты клавиш</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Приведённая выше последовательность <kbd>C-x C-c</kbd> действует в GNU Emacs независимо от того, какие режимы активны в буфере.
+Однако, некоторые последовательности клавиш действуют только при активации определённых режимов.
+Более того, одна и та же последовательность в разных режимах может делать разные вещи.</p>
+</div>
+<div class="paragraph">
+<p>Такое поведение достигается за счёт использования <em>карт клавиш</em> (keymaps).</p>
+</div>
+<div class="paragraph">
+<p>Карты клавиш делятся на глобальную и локальные.</p>
+</div>
+<div class="paragraph">
+<p>Последовательности из глобальной карты всегда и везде действуют одинаково.
+Последовательности из локальных карт действуют только если активен соответствующий режим.</p>
+</div>
+<div class="paragraph">
+<p>Кроме этого, режим может определять собственные последовательности.
+В этом случае говорят, что у него собственная карта клавиш.
+Однако, для запуска этих последовательностей нужно использовать сочетание, называемое <em>префиксом</em>.</p>
+</div>
+<div class="paragraph">
+<p>Допустим, некий режим определяет команды, привязанные к последовательностям <kbd>C-a</kbd> и <kbd>C-c</kbd>.
+Эти последовательности могут конфликтовать с другими режимами, и вместо нужных функций будут вызываться ненужные.</p>
+</div>
+<div class="paragraph">
+<p>Чтобы этого не происходило, добавим в настройках карты клавиш режима префикс, например, <kbd>C-t</kbd>.
+Это значит, что для вызова нужных функций теперь нужно использовать последовательности <kbd>C-t C-a</kbd> и <kbd>C-t C-c</kbd> соответственно.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kyes-bindings"><a class="anchor" href="#kyes-bindings"></a>Привязки</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>В большинстве случаев вам нужно будет привязывать команды к глобальной карте клавиш.</p>
+</div>
+<div class="paragraph">
+<p>Порядок привязки последовательностей следующий:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Очистить существующие связи последовательности с командами с помощью функции <code>keymap-global-unset</code>.</p>
+</li>
+<li>
+<p>Связать нужную последовательность с нужной командой с помощью функции <code>keymap-global-set</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Рассмотрим на примере из реальной жизни.
+По умолчанию в GNU Emacs последовательность <kbd>C-z</kbd> не отменяет последнюю сделанную правку, а сворачивает редактор на панель (при работе в графическом режиме) или в фон (при работе в терминале).
+Разумеется, такое поведение не только сбивает с толку, но и крайне неудобно.</p>
+</div>
+<div class="paragraph">
+<p>Добавьте в <code>init.el</code> код, исправляющий поведение GNU Emacs при нажатии последовательность <kbd>C-z</kbd>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">(keymap-global-unset "C-z")
+(keymap-global-set "C-z" 'undo)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Если у вас старая версия GNU Emacs и приведённый выше код не работает, перепишите его следующим образом:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">(global-unset-key (kbd "C-z"))
+(global-set-key (kbd "C-z") 'undo)</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Примечание"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>В старых версиях GNU Emacs функции <code>global-set-key</code> и <code>global-unset-key</code> принимают на вход код последовательности и название команды.
+Для определения кода последовательности нужно использовать функцию <code>kbd</code>.
+Функции <code>keymap-global-set</code> и <code>keymap-global-unset</code> определяют код последовательности автоматически.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="keys-l11n"><a class="anchor" href="#keys-l11n"></a>Локализация</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Если вы используете GNU Emacs с системной раскладкой, то наверняка обратили внимание, что все последовательности и сочетания работают в раскладке <strong>EN</strong> и не работают в раскладке <strong>RU</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Существует несколько способов решения этой проблемы, но я рекомендую следующие два.</p>
+</div>
+<div class="sect2">
+<h3 id="keys-l11n-toggle-input-method"><a class="anchor" href="#keys-l11n-toggle-input-method"></a>Смена метода ввода</h3>
+<div class="paragraph">
+<p>Для смены метода ввода нажмите kbd:[C-\].
+Внутри GNU Emacs раскладка изменится, а сочетания и последовательности клавиш начнут работать.</p>
+</div>
+<div class="paragraph">
+<p>Хотя этот метод решения проблемы является рекомендуемым, у него есть несколько недостатков.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Для фреймов GNU Emacs вам нужно будет всегда использовать раскладку <strong>EN</strong>.
+Впрочем, это не такая уж большая проблема в большинстве операционных систем.
+Достаточно включить настройку <strong>Отдельная раскладка для каждого окна</strong>.</p>
+</li>
+<li>
+<p>Поначалу вы будете не раз путаться в раскладках, по старой памяти используя системный переключатель.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="keys-l11n-reverse-im"><a class="anchor" href="#keys-l11n-reverse-im"></a>Сторонний пакет <code>reverse-im</code></h3>
+<div class="paragraph">
+<p>Используйте пакет <code>reverse-im</code>, и тогда GNU Emacs начнёт «понимать» сочетания и последовательности клавиш в указанных раскладках и методах ввода.</p>
+</div>
+<div class="listingblock">
+<div class="title">Установка и настройка <code>reverse-im.el</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">;; 📦 REVERSE-IM
+;; https://github.com/a13/reverse-im.el
+;; Чтобы сочетания клавиш работали в любой раскладке.
+(use-package reverse-im
+  :ensure t
+  :custom
+  (reverse-im-input-methods '("russian-computer"))
+  :config
+  (reverse-im-mode 1))</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Вопрос удобства использования длинных последовательностей оставим за скобками.
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="installation.html">Установка</a></span>
+  <span class="next"><a href="commands.html">Команды</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

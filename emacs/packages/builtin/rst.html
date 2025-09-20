@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>rst.el :: GNU Emacs по-русски</title>
+    <link rel="canonical" href="https://emacs-ru.github.io/emacs/packages/builtin/rst.html">
+    <link rel="prev" href="index.html">
+    <link rel="next" href="which-key.html">
+    <meta name="generator" content="Antora 3.1.12">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://emacs-ru.github.io">GNU Emacs по-русски</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="emacs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../index.html">GNU Emacs по-русски</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../index.html">Добро пожаловать!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../core/index.html">Основы</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../core/installation.html">Установка</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../core/keys.html">Клавиши</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../core/commands.html">Команды</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../core/modes.html">Режимы</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../core/store-settings.html">Хранение настроек</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../core/customize.html">Customize</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary.html">Глоссарий</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Встроенные пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="rst.html"><code>rst.el</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="which-key.html">which-key</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GNU Emacs по-русски</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../index.html">GNU Emacs по-русски</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">GNU Emacs по-русски</a></li>
+    <li><a href="../index.html">Пакеты</a></li>
+    <li><a href="index.html">Встроенные пакеты</a></li>
+    <li><a href="rst.html"><code>rst.el</code></a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///content/modules/packages/pages/builtin/rst.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page"><code>rst.el</code></h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Встроенный пакет <code>rst.el</code> используется при работе с <a href="https://docutils.sourceforge.io/rst.html">reStructured Text</a>&#8201;&#8212;&#8201;основным форматом системы документирования <a href="https://www.sphinx-doc.org/en/master/">Sphinx</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="settings"><a class="anchor" href="#settings"></a>Настройки</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rst-adjust-hook"><a class="anchor" href="#rst-adjust-hook"></a><code>rst-adjust-hook</code></h3>
+<div class="paragraph">
+<p>Список команд, выполняемых <em>после</em> вызова <code>rst-adjust</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>nil</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-adornment-faces-alist"><a class="anchor" href="#rst-adornment-faces-alist"></a><code>rst-adornment-faces-alist</code></h3>
+<div class="paragraph">
+<p>Список представлений шрифта, используемых для украшения (adornment) заголовков.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">'((t . rst-transition)
+  (nil . rst-adornment)
+  (1 . rst-level-1)
+  (2 . rst-level-2)
+  (3 . rst-level-3)
+  (4 . rst-level-4)
+  (5 . rst-level-5)
+  (6 . rst-level-6))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-compile-toolsets"><a class="anchor" href="#rst-compile-toolsets"></a><code>rst-compile-toolsets</code></h3>
+<div class="paragraph">
+<p>Список средств, используемых для преобразования открытого файла ReStructured Text в нужный формат.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Примечание"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Речь не о Sphinx и проектах, а об инструментах для сборки отдельных файлов.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> зависит от целевого формата и найденных исполняемых файлов: если исполняемый файл не будет найден, использовать команду будет нельзя.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Формат</th>
+<th class="tableblock halign-left valign-top">Инструмент</th>
+<th class="tableblock halign-left valign-top">Расширение целевого файла</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rst2html.py</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.html</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LaTeX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rst2latex.py</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.tex</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NewLaTeX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rst2newlatex.py</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.tex</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PseudoXML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rst2pseudoxml.py</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.xml</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rst2xml.py</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.xml</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PDF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rst2pdf.py</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.pdf</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rst2s5.py</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.html</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Имя целевого файла будет таким же, как у открытого, только с нужным расширением.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-default-indent"><a class="anchor" href="#rst-default-indent"></a><code>rst-default-indent</code></h3>
+<div class="paragraph">
+<p>Если для оформления заголовков используются украшения, заголовки будут выравниваться с помощью указанного количества пробелов.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>1</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-indent-comment"><a class="anchor" href="#rst-indent-comment"></a><code>rst-indent-comment</code></h3>
+<div class="paragraph">
+<p>Размер отступа для блоков с комментариями.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>3</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-indent-field"><a class="anchor" href="#rst-indent-field"></a><code>rst-indent-field</code></h3>
+<div class="paragraph">
+<p>Размер отступа первой строки после поля.
+При значении <code>0</code>&#8201;&#8212;&#8201;выравнивание по содержимому.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>3</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-indent-literal-minimized"><a class="anchor" href="#rst-indent-literal-minimized"></a><code>rst-indent-literal-minimized</code></h3>
+<div class="paragraph">
+<p>Размер отступа для литеральных блоков при использовании сокращённой разметки.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>2</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-indent-literal-normal"><a class="anchor" href="#rst-indent-literal-normal"></a><code>rst-indent-literal-normal</code></h3>
+<div class="paragraph">
+<p>Размер отступа для литеральных блоков, использующих полную разметку.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>3</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-indent-width"><a class="anchor" href="#rst-indent-width"></a><code>rst-indent-width</code></h3>
+<div class="paragraph">
+<p>Размер отступа.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>2</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-mode-hook"><a class="anchor" href="#rst-mode-hook"></a><code>rst-mode-hook</code></h3>
+<div class="paragraph">
+<p>Список команд, выполняемых при включении <code>rst-mode</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Примечание"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Эти команды выполняются после команд, привязанных к включению <code>text-mode</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>nil</code> (пустой список).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-new-adornment-down"><a class="anchor" href="#rst-new-adornment-down"></a><code>rst-new-adornment-down</code></h3>
+<div class="paragraph">
+<p>Уровень, используемый при украшении заголовка.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Примечание"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Чтобы использовать возможность украшения, хотя бы один заголовок придётся добавить вручную.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Возможные значения:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>nil</code>&#8201;&#8212;&#8201;такой же, как у предыдущего заголовка:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-rst hljs" data-lang="rst">=============
+ Заголовок 1
+=============
+
+=============
+ Заголовок 2
+=============
+
+=============
+ Заголовок 3
+=============</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>t</code>&#8201;&#8212;&#8201;на уровень ниже чем у предыдущего заголовка:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-rst hljs" data-lang="rst">=============
+ Заголовок 1
+=============
+
+Заголовок 2
+===========
+
+Заголовок 3
+-----------</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>nil</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-preferred-adornments"><a class="anchor" href="#rst-preferred-adornments"></a><code>rst-preferred-adornments</code></h3>
+<div class="paragraph">
+<p>Стили украшения заголовков.</p>
+</div>
+<div class="paragraph">
+<p>Каждая запись состоит из трёх параметров:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Символ, используемый для украшения.</p>
+</li>
+<li>
+<p>Стиль:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>over-and-under</code>&#8201;&#8212;&#8201;сверху и снизу;</p>
+</li>
+<li>
+<p><code>simple</code>&#8201;&#8212;&#8201;только снизу.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Отступ для текста.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">'((?= over-and-under 1)
+  (?= simple 0)
+  (?- simple 0)
+  (?~ simple 0)
+  (?+ simple 0)
+  (?` simple 0)
+  (?# simple 0)
+  (?@ simple 0))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>При таких значениях по умолчанию заголовки будут оформлены так:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-rst hljs" data-lang="rst">===========
+ Уровень 1
+===========
+
+Уровень 2
+=========
+
+Уровень 3
+---------
+
+Уровень 4
+~~~~~~~~~
+
+Уровень 5
++++++++++
+
+Уровень 6
+`````````
+
+Уровень 7
+#########
+
+Уровень 8
+@@@@@@@@@</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-preferred-bullets"><a class="anchor" href="#rst-preferred-bullets"></a><code>rst-preferred-bullets</code></h3>
+<div class="paragraph">
+<p>Список символов, используемых для оформления маркированных списков.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>'(?* ?- ?+)</code>, т. е. маркерами считаются <code>*</code>, <code>-</code> и <code>+</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-toc-indent"><a class="anchor" href="#rst-toc-indent"></a><code>rst-toc-indent</code></h3>
+<div class="paragraph">
+<p>Отступ оглавления.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>2</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-toc-insert-max-level"><a class="anchor" href="#rst-toc-insert-max-level"></a><code>rst-toc-insert-max-level</code></h3>
+<div class="paragraph">
+<p>Максимальный уровень заголовков, которые должны быть включены в оглавление.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> <code>nil</code> (заголовки всех уровней).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-toc-insert-number-separator"><a class="anchor" href="#rst-toc-insert-number-separator"></a><code>rst-toc-insert-number-separator</code></h3>
+<div class="paragraph">
+<p>Разделитель номера элемента оглавления и его заголовка.</p>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong> `  ` (два пробела).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rst-toc-insert-style"><a class="anchor" href="#rst-toc-insert-style"></a><code>rst-toc-insert-style</code></h3>
+<div class="paragraph">
+<p>Стиль оглавления.</p>
+</div>
+<div class="paragraph">
+<p><strong>Возможные значения:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>plain</code>&#8201;&#8212;&#8201;без нумерации, но с фиксированными отступами;</p>
+</li>
+<li>
+<p><code>fixed</code>&#8201;&#8212;&#8201;с нумерацией, но без фиксации отступов;</p>
+</li>
+<li>
+<p><code>aligned</code>&#8201;&#8212;&#8201;с нумерацией, заголовки выравниваются друг относительно друга;</p>
+</li>
+<li>
+<p><code>listed</code>&#8201;&#8212;&#8201;заголовки оформляются как элементы списка.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Значение по умолчанию:</strong>&#8201;&#8212;&#8201;<code>fixed</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="advices"><a class="anchor" href="#advices"></a>Рекомендации</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Если вы работаете с reStructured Text в рамках Sphinx, имеет смысл переопределить некоторые настройки:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">;; 📦 RST-MODE
+;; Встроенный пакет для редактирования reStructutedText
+;; https://www.writethedocs.org/guide/writing/reStructuredText/
+(require 'rst)
+(custom-set-variables
+ '(rst-default-indent 3)
+ '(rst-indent-comment 3)
+ '(rst-indent-field 3)
+ '(rst-indent-literal-minimized 3)
+ '(rst-indent-width 3)
+ '(rst-preferred-adornments '((?# over-and-under 1)
+                              (?* over-and-under 1)
+                              (?= simple 0)
+                              (?- simple 0)
+                              (?^ simple 0)
+                              (?\" simple 0)))
+ '(rst-toc-indent 3))</code></pre>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="index.html">Встроенные пакеты</a></span>
+  <span class="next"><a href="which-key.html">which-key</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

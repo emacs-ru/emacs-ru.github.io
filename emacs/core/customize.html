@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Customize :: GNU Emacs по-русски</title>
+    <link rel="canonical" href="https://emacs-ru.github.io/emacs/core/customize.html">
+    <link rel="prev" href="store-settings.html">
+    <link rel="next" href="../glossary.html">
+    <meta name="generator" content="Antora 3.1.12">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://emacs-ru.github.io">GNU Emacs по-русски</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="emacs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">GNU Emacs по-русски</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Добро пожаловать!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Основы</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="installation.html">Установка</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="keys.html">Клавиши</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="commands.html">Команды</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="modes.html">Режимы</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="store-settings.html">Хранение настроек</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="customize.html">Customize</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">Глоссарий</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../packages/index.html">Пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../packages/builtin/index.html">Встроенные пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../packages/builtin/rst.html"><code>rst.el</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../packages/builtin/which-key.html">which-key</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GNU Emacs по-русски</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">GNU Emacs по-русски</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">GNU Emacs по-русски</a></li>
+    <li><a href="index.html">Основы</a></li>
+    <li><a href="customize.html">Customize</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///content/modules/ROOT/pages/core/customize.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Customize</h1>
+<div class="paragraph">
+<p>Существует два основных подхода к настройке GNU Emacs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Самостоятельное написание кода в файле <code>init.el</code>.</p>
+</li>
+<li>
+<p>Использование псевдографического интерфейса <code>customize</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Для запуска интерфейса <code>customize</code> выполните следующие действия:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Нажмите <span class="keyseq"><kbd>Alt</kbd>+<kbd>x</kbd></span>.</p>
+</li>
+<li>
+<p>Введите команду <code>customize</code> и нажмите <kbd>Enter</kbd>.
+В открывшемся <em>буфере</em> вы увидите примерно такое:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">For help using this buffer, see [Easy Customization] in the [Emacs manual].
+
+[                                      ] [ Search ]
+
+Operate on all settings in this buffer:
+[ Revert... ] [ Apply ] [ Apply and Save ]
+
+
+Emacs group: Customization of the One True Editor.
+      [ State ]: visible group members are all at standard values.
+      See also [Manual].
+
+[Editing]        Basic text editing facilities.
+[Convenience]    Convenience features for faster editing.
+[Files]          Support for editing files.
+[Wp]             Support for editing text files. More
+[Text]           Support for editing text files.
+[Data]           Support for editing binary data files.
+[External]       Interfacing to external utilities.
+[Communication]  Communications, networking, and remote access to files.
+[Programming]    Support for programming in other languages.
+[Applications]   Applications written in Emacs.
+[Development]    Support for further development of Emacs.
+[Environment]    Fitting Emacs with its environment.
+[Faces]          Support for multiple fonts.
+[Help]           Support for Emacs help systems.
+[Multimedia]     Non-textual support, specifically images and sound.
+[Local]          Code local to your site.</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Для поиска нужных настроек вы можете использовать поле рядом с кнопкой <b class="button">Search</b> или переходить по ссылкам (обрамлены квадратными скобками).</p>
+</div>
+<div class="paragraph">
+<p>Для изменения настроек следует использовать соответствующие элементы интерфейса.</p>
+</div>
+<div class="paragraph">
+<p>Для сохранения сделанных изменений:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Нажмите кнопку <b class="button">State</b>.</p>
+</li>
+<li>
+<p>Выберите вариант ответа:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>0 = Set for Current Session</code>&#8201;&#8212;&#8201;сохранить только для активной сессии.
+При следующем запуске GNU Emacs значение будет сброшено.</p>
+</li>
+<li>
+<p><code>1 = Save for Future Sessions</code>&#8201;&#8212;&#8201;сохранить новое значение на постоянной основе.
+В <code>init.el</code> будет добавлен код, обеспечивающий установку выбранного значения.</p>
+</li>
+<li>
+<p><code>2 = Undo Edits</code>&#8201;&#8212;&#8201;отменить сделанные изменения.</p>
+</li>
+<li>
+<p><code>3 = Revert This Session&#8217;s Customization</code>&#8201;&#8212;&#8201;отменить правки, сделанные в этой сессии.</p>
+</li>
+<li>
+<p><code>4 = Erase Customization</code>&#8201;&#8212;&#8201;из <code>init.el</code> будет удалён код настройки параметра.
+При следующем запуске GNU Emacs для настройки будет использоваться значение по умолчанию.</p>
+</li>
+<li>
+<p><code>5 = Add Comment</code>&#8201;&#8212;&#8201;добавить комментарий к настройке.
+То же самое, что <code>1 = Save for Future Sessions</code>, только дополнительно к настройке будет добавлен указанный комментарий.</p>
+</li>
+<li>
+<p><code>6 = Show Saved Lisp Expression</code>&#8201;&#8212;&#8201;показать код из <code>init.el</code>, выполняющий установку выбранного значения.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Совет"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>В любой момент можно прервать настройку с помощью сочетания <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>g</kbd></span>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Таким образом, <code>customize</code> хорошо подходит для изучения списка доступных настроек, их тестирования и генерации фрагментов кода на языке Emacs Lisp, выполняющих присваивание тех или иных значений нужным параметрам.</p>
+</div>
+<div class="paragraph">
+<p>Для чего <code>customize</code> подходит плохо, так это для реализации чего-то более сложного, чем присваивание значений указанным параметрам.
+Например, нет никакой возможности проверить выполнение нужных условий и установить значение настроек в зависимости от результатов проверки.
+Также через <code>customize</code> не получится создать код, выполняющий создание каталогов, поиск файлов и многое другое.</p>
+</div>
+<div class="paragraph">
+<p>Далее предполагается, что <code>customize</code> <strong>не будет использоваться</strong>, и все настройки будут выполняться путём добавления в <code>init.el</code> кода на Emacs Lisp вручную.</p>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="store-settings.html">Хранение настроек</a></span>
+  <span class="next"><a href="../glossary.html">Глоссарий</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
