@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Управление пакетами :: GNU Emacs по-русски</title>
+    <title>Пакеты :: GNU Emacs по-русски</title>
     <link rel="canonical" href="https://emacs-ru.github.io/emacs/packages/index.html">
-    <link rel="prev" href="../core/customize.html">
-    <link rel="next" href="archives.html">
+    <link rel="prev" href="../glossary.html">
+    <link rel="next" href="builtin/index.html">
     <meta name="generator" content="Antora 3.1.12">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -61,15 +61,6 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Управление пакетами</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="archives.html">Архивы пакетов</a>
-  </li>
-</ul>
-  </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../glossary.html">Глоссарий</a>
   </li>
@@ -121,52 +112,224 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">GNU Emacs по-русски</a></li>
-    <li><a href="index.html">Управление пакетами</a></li>
+    <li><a href="index.html">Пакеты</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="https://github.com/emacs-ru/content/edit/main/modules/ROOT/pages/packages/index.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="file:///content/modules/packages/pages/index.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Управление пакетами</h1>
-<div class="paragraph">
-<p>Пакет&#8201;&#8212;&#8201;это аналог плагина или дополнения.</p>
-</div>
-<div class="paragraph">
-<p>Пакеты делятся на встроенные и сторонние.</p>
-</div>
+<h1 class="page">Пакеты</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Встроенный пакет</dt>
+<dt class="hdlist1">Пакет</dt>
 <dd>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
-<p>Встроенный пакет входит в состав GNU Emacs и доступен без установки.
-Некоторые встроенные пакеты можно обновить из архива пакетов.</p>
-</div>
-</div>
-</div>
-</dd>
-<dt class="hdlist1">Сторонний пакет</dt>
-<dd>
-<div class="openblock">
-<div class="content">
-<div class="paragraph">
-<p>Сторонние пакеты недоступны до тех пор, пока не будут установлены.
-Существуют разные способы установки сторонних пакетов, но де-факто самый распространённый способ&#8201;&#8212;&#8201;использование архивов пакетов с помощью <code>package.el</code>.</p>
+<p>Пакетом называется один или несколько файлов с кодом на языке Emacs Lisp, выполняющих определённую задачу.</p>
 </div>
 </div>
 </div>
 </dd>
 </dl>
 </div>
+<div class="paragraph">
+<p>Пакеты делятся на несколько типов.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Встроенные (built-in) пакеты поставляются вместе с GNU Emacs.</p>
+</li>
+<li>
+<p>Сторонние пакеты могут быть установлены различными способами.
+Кроме этого, некоторые пакеты время от времени берёт под крыло проект GNU, и они становятся встроенными при выходе очередной версии GNU Emacs.
+Например, это случилось с <code>use-package.el</code> и <code>which-key.el</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Сторонние пакеты могут быть установлены разными способами, но рекомендуемым является использование архивов пакетов.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="archives"><a class="anchor" href="#archives"></a>Архивы пакетов</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Архивы пакетов позволяют использовать встроенный пакет <code>package.el</code> для управления пакетами.
+Это избавляет вас от необходимости искать и скачивать исходный код пакетов из различных источников.
+Достаточно настроить GNU Emacs на использование нужных архивов, и все нужные пакеты можно будет устанавливать из них.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">GNU ELPA</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Этот архив пакетов управляется GNU.
+Пакеты в нём не очень новые и редко обновляются, но все они тщательно протестированы и, как правило, снабжены подробной документацией.</p>
+</div>
+<div class="paragraph">
+<p>Количество пакетов невелико, некоторые из них устарели морально.</p>
+</div>
+<div class="paragraph">
+<p>Однако, при использовании пакетов из этого архива у вас вряд ли будут с ними какие-то проблемы.</p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">MELPA</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Этот крупнейший архив пакетов управляется сообществом.
+Каждый пакет в нём собирается на основе последнего коммита в репозиторий проекта.
+Эта особенность имеет два последствия:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>с одной стороны, в MELPA всегда самые свежие версии пакетов;</p>
+</li>
+<li>
+<p>с другой стороны, эти пакеты не отличаются стабильностью, а часто попросту сломаны.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Используйте пакеты из этого архива с большой осторожностью.</p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">NON-GNU ELPA</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Этот архив содержит пакеты, по какие-то причинам не попавшие в GNU ELPA, часто из-за проблем с лицензией или документацией.</p>
+</div>
+<div class="paragraph">
+<p>Пакетов здесь немного, но они хорошо протестированы и стабильны.</p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">MELPA STABLE</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Этот архив отличается от MELPA только тем, что пакеты в нём собираются из ревизий кода, отмеченных тегами.</p>
+</div>
+<div class="paragraph">
+<p>Обычно теги ставят на стабильные релизы, однако, нередки случаи, когда пакеты из MELPA Stable содержат ошибки или попросту сломаны.
+В совсем редких случаях пакет из MELPA может работать стабильнее чем его версия из MELPA STABLE.</p>
+</div>
+<div class="paragraph">
+<p>Этот репозиторий рекомендуется использовать в том случае, когда нужного пакета нет в GNU ELPA или NON-GNU ELPA</p>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>За список архивов в GNU Emacs отвечает переменная <code>package-archives</code>.
+Чтобы воспользоваться всеми перечисленными пакетами, добавьте в начало <code>init.el</code> такой код:</p>
+</div>
+<div class="listingblock">
+<div class="title">Настройка архивов пакетов</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">(require 'package)
+(customize-set-variable 'package-enable-at-startup nil "Prevent double loading of libraries")
+(add-to-list 'package-arhives '("gnu" . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-arhives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-arhives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-arhives '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
+(package-initialize)</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="archives-priority"><a class="anchor" href="#archives-priority"></a>Приоритеты архивов</h3>
+<div class="paragraph">
+<p>По умолчанию GNU Emacs будет устанавливать самую свежую версию пакета, которую найдёт.
+Это значит, что при использовании приведённого выше фрагмента кода пакеты будут ставиться в первую очередь из MELPA, то есть будут крайне нестабильны.
+Однако, вы можете изменить приоритеты архивов, задав их в значении настройки <code>package-archive-priorities</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Настройка приоритетов архивов</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-emacs-lisp hljs" data-lang="emacs-lisp">(customize-set-variable
+ 'package-archive-priorities
+ '(("gnu" . 40)
+   ("nongnu" . 30)
+   ("melpa-stable" . 20)
+   ("melpa" . 10)))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>В этом случае GNU Emacs будет искать пакеты в следующем порядке:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>GNU ELPA</p>
+</li>
+<li>
+<p>NON-GNU ELPA</p>
+</li>
+<li>
+<p>MELPA STABLE</p>
+</li>
+<li>
+<p>MELPA</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>В большинстве случаев этого будет достаточно для стабильной работы GNU Emacs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="package-el"><a class="anchor" href="#package-el"></a><code>package.el</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Встроенный пакет <code>package.el</code> предоставляет для работы со сторонними пакетами интерактивный режим и неинтерактивные команды.</p>
+</div>
+<div class="sect2">
+<h3 id="package-el-install"><a class="anchor" href="#package-el-install"></a>Установка</h3>
+<div class="paragraph">
+<p>Для установки пакета в неинтерактивном режиме выполните две команды:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>package-refresh-contents</code>&#8201;&#8212;&#8201;обновление локальной копии архива пакетов.</p>
+</li>
+<li>
+<p><code>package-install</code>&#8201;&#8212;&#8201;команда, которая принимает на вход название пакета.
+Если пакет не установлен, <code>package.el</code> поищет его в архивах и установит.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../core/customize.html">Customize</a></span>
-  <span class="next"><a href="archives.html">Архивы пакетов</a></span>
+  <span class="prev"><a href="../glossary.html">Глоссарий</a></span>
+  <span class="next"><a href="builtin/index.html">Встроенные пакеты</a></span>
 </nav>
 </article>
   </div>

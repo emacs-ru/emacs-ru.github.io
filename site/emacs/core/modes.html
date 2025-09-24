@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Основы :: GNU Emacs по-русски</title>
-    <link rel="canonical" href="https://emacs-ru.github.io/emacs/core/index.html">
-    <link rel="prev" href="../index.html">
-    <link rel="next" href="installation.html">
+    <title>Режимы :: GNU Emacs по-русски</title>
+    <link rel="canonical" href="https://emacs-ru.github.io/emacs/core/modes.html">
+    <link rel="prev" href="commands.html">
+    <link rel="next" href="store-settings.html">
     <meta name="generator" content="Antora 3.1.12">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -37,7 +37,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../index.html">Добро пожаловать!</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Основы</a>
 <ul class="nav-list">
@@ -50,7 +50,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="commands.html">Команды</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="modes.html">Режимы</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -58,6 +58,18 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="customize.html">Customize</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../packages/index.html">Управление пакетами</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../packages/archives.html">Архивы пакетов</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../packages/package.el.html">Использование <code>package.el</code></a>
   </li>
 </ul>
   </li>
@@ -113,22 +125,75 @@
   <ul>
     <li><a href="../index.html">GNU Emacs по-русски</a></li>
     <li><a href="index.html">Основы</a></li>
+    <li><a href="modes.html">Режимы</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///content/modules/ROOT/pages/core/index.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/emacs-ru/content/edit/main/modules/ROOT/pages/core/modes.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Основы</h1>
+<h1 class="page">Режимы</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>В этом разделе рассматриваются основы работы с GNU Emacs, а также даются описания встроенных функций и пакетов.</p>
+<p>Режим определяет поведение GNU Emacs при работе с буфером.
+В большинстве других редакторов список доступных команд и функций зависит от типа файла, с которым вы работаете.
+В GNU Emacs немного другая система.</p>
+</div>
+<div class="paragraph">
+<p>В каждом буфере активен один <em>основной режим</em> (primary mode) и несколько <em>дополнительных</em> (minor modes).</p>
+</div>
+<div class="paragraph">
+<p>Основной режим определяет базовое поведение GNU Emacs при работе с буфером: подсветка синтаксиса, основные привязки клавиш, функции рефакторинга и так далее.</p>
+</div>
+<div class="paragraph">
+<p>Только один режим может быть основным: при выборе другого основного режима предыдущий перестаёт действовать<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>По области действия режимы делятся на локальные, действующие только в пределах активного буфера, и глобальные, действующие на все открытые буферы.</p>
+</div>
+<div class="paragraph">
+<p>Некоторые пакеты предоставляют команды для активации соответствующих локального и глобального режима.
+Например, в пакете <code>whitespace-mode.el</code> доступны команды <code>whitespace-mode</code> и <code>global-whitespace-mode</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modes-list"><a class="anchor" href="#modes-list"></a>Список</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Названия некоторых активных режимов выводятся в строке статуса.</p>
+</div>
+<div class="paragraph">
+<p>Чтобы получить более полный список действующих в буфере режимов, нажмите <kbd>C-h m</kbd>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modes-toggle"><a class="anchor" href="#modes-toggle"></a>Включение / выключение</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Чтобы включить основной режим, выполните соответствующую команду в минибуфере.
+Выполнение команды включения основного режима <em>идемпотентно</em>&#8201;&#8212;&#8201;сколько бы раз вы не вызывали соответствующую команду, эффект будет иметь только самый первый вызов.</p>
+</div>
+<div class="paragraph">
+<p>В то же время дополнительные режимы ведут себя иначе.
+Выполнение соответствующей команды <em>переключает</em> (toggle) состояние режима&#8201;&#8212;&#8201;если он был включен, то он выключится, и наоборот.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Существуют пакеты, позволяющие активировать несколько основных режимов сразу.
+</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../index.html">Добро пожаловать!</a></span>
-  <span class="next"><a href="installation.html">Установка</a></span>
+  <span class="prev"><a href="commands.html">Команды</a></span>
+  <span class="next"><a href="store-settings.html">Хранение настроек</a></span>
 </nav>
 </article>
   </div>

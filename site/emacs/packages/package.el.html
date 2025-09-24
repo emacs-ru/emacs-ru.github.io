@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Использование package.el :: GNU Emacs по-русски</title>
+    <link rel="canonical" href="https://emacs-ru.github.io/emacs/packages/package.el.html">
+    <link rel="prev" href="archives.html">
+    <link rel="next" href="../glossary.html">
+    <meta name="generator" content="Antora 3.1.12">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article el">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://emacs-ru.github.io">GNU Emacs по-русски</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="emacs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">GNU Emacs по-русски</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Добро пожаловать!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../core/index.html">Основы</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/installation.html">Установка</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/keys.html">Клавиши</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/commands.html">Команды</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/modes.html">Режимы</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/store-settings.html">Хранение настроек</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../core/customize.html">Customize</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Управление пакетами</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="archives.html">Архивы пакетов</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="package.el.html">Использование <code>package.el</code></a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary.html">Глоссарий</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="builtin/index.html">Встроенные пакеты</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="builtin/rst.html"><code>rst.el</code></a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="builtin/which-key.html">which-key</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">GNU Emacs по-русски</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../index.html">GNU Emacs по-русски</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">GNU Emacs по-русски</a></li>
+    <li><a href="index.html">Управление пакетами</a></li>
+    <li><a href="package.el.html">Использование <code>package.el</code></a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/emacs-ru/content/edit/main/modules/ROOT/pages/packages/package.el.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Использование <code>package.el</code></h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Теперь, когда архивы и их приоритеты настроены, пришло время научиться работать с <code>package.el</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="package-operations-installation"><a class="anchor" href="#package-operations-installation"></a>Установка</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Для установки пакета:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Обновите список доступных пакетов с помощью команды <code>package-refresh-contents</code>.</p>
+</li>
+<li>
+<p>Выполните команду <code>package-install</code>.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>В минибуфере будет выведено приглашение ко вводу названия пакета:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Install package:</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Введите название нужного пакета и нажмите <kbd>RET</kbd>.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>GNU Emacs подключится к нужному архиву, загрузит из него код пакета и распакует в каталог <code>~/.emacs.d/elpa/</code>.
+При необходимости также будут загружены и установлены зависимости.</p>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="package-operations-delete"><a class="anchor" href="#package-operations-delete"></a>Удаление</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Примечание"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Некоторые пакеты нельзя удалить средствами GNU Emacs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>встроенные пакеты;</p>
+</li>
+<li>
+<p>пакеты, установленные с помощью пакетного менеджера ОС;</p>
+</li>
+<li>
+<p>пакеты, от которых зависит хотя бы один другой пакет.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Для удаления пакета:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните команду <code>package-delete</code>.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>В минибуфере будет выведено приглашение ко вводу названия пакета:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Delete package:</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Введите название ненужного пакета и нажмите <kbd>RET</kbd>.</p>
+</li>
+<li>
+<p>Если удаляемый пакет является зависимостью другого пакета, GNU Emacs напишет его название.
+В этом случае придётся сначала удалить зависимый пакет.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="package-operations-upgrade"><a class="anchor" href="#package-operations-upgrade"></a>Обновление</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Чтобы обновить установленные пакеты, выполните команду <code>package-upgrade-all</code>.
+GNU Emacs проверит содержимое архивов, и если найдёт у вас пакеты, которые можно обновить, предложит это сделать.
+Подтвердите выполнение операции и перезапустите GNU Emacs.</p>
+</div>
+<div class="paragraph">
+<p>Часто нет необходимости перезапускать редактор.
+Однако, <em>иногда</em> без этого он начинает вести себя странно.
+Например, выдаёт ошибки при вызове команд, которые точно работали в предыдущей версии пакета.</p>
+</div>
+<div class="paragraph">
+<p>Семь бед&#8201;&#8212;&#8201;один reset!
+Точнее, перезапуск редактора.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="package-operations-list-packages"><a class="anchor" href="#package-operations-list-packages"></a>Интерактивный режим</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Пакет <code>package.el</code> позволяет управлять пакетами в интерактивном режиме.</p>
+</div>
+<div class="paragraph">
+<p>Чтобы открыть список пакетов, выполните команду <code>package-list-packages</code>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Совет"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>У команды <code>package-list-packages</code> есть псевдоним&#8201;&#8212;&#8201;<code>list-packages</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>package-list-packages</code> автоматически выполняет команду <code>package-refresh-contents</code>.
+Понадобится некоторое время, чтобы загрузить из архивов новые версии списков доступных пакетов.
+Во время этого процесса в строке статуса будет выводиться надпись "Loading&#8230;&#8203;".</p>
+</div>
+<div class="paragraph">
+<p>Когда список пакетов будет загружен, в буфере <code>*Packages*</code> отобразится таблица с несколькими колонками:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>безымянная колонка, в которой будет выводиться маркер назначенного действия;</p>
+</li>
+<li>
+<p><strong>Package</strong>&#8201;&#8212;&#8201;название пакета;</p>
+</li>
+<li>
+<p><strong>Version</strong>&#8201;&#8212;&#8201;версия пакета;</p>
+</li>
+<li>
+<p><strong>Status</strong>&#8201;&#8212;&#8201;состояние пакета;</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>available</code>&#8201;&#8212;&#8201;пакет доступен для установки;</p>
+</li>
+<li>
+<p><code>installed</code>&#8201;&#8212;&#8201;пакет уже установлен с помощью менеджера пакетов;</p>
+</li>
+<li>
+<p><code>dependency</code>&#8201;&#8212;&#8201;пакет установлен как зависимость другого пакета;</p>
+</li>
+<li>
+<p><code>build-in</code>&#8201;&#8212;&#8201;встроенный пакет;</p>
+</li>
+<li>
+<p><code>external</code>&#8201;&#8212;&#8201;пакет установлен с помощью сторонних средств, например, менеджера пакетов операционной системы;</p>
+</li>
+<li>
+<p><code>incompat</code>&#8201;&#8212;&#8201;пакет несовместим с используемой версией GNU Emacs;</p>
+</li>
+<li>
+<p><code>new</code>&#8201;&#8212;&#8201;пакета раньше<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> не было, а теперь он появился;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Archive</strong>&#8201;&#8212;&#8201;архив, в котором находится указанная версия пакета;</p>
+</li>
+<li>
+<p><strong>Description</strong>&#8201;&#8212;&#8201;краткое описание пакета на английском языке.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Для работы со списком используйте указанные в таблице сочетания и последовательности:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<caption class="title">Таблица 1. Действия над пакетами</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 66.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Сочетание</th>
+<th class="tableblock halign-center valign-top">Действие</th>
+<th class="tableblock halign-center valign-top">Метка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>n</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Перейти к следующему пакету</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>p</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Перейти к предыдущему пакету</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>i</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Отметить пакет как устанавливаемый</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>I</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>d</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Отметить пакет как удаляемый</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>D</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>U</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Отметить пакет как обновляемый</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>U</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>u</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Снять метку, если она установлена</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><kbd>RET</kbd></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Показать краткую информацию о пакете.
+Информация выводится в отдельном окне.
+Чтобы закрыть его, нажмите <kbd>C-x 1</kbd></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>w</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Открыть веб-страницу пакета в браузере</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ /</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Сброс фильтра пакетов</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ n</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по названию</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ d</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по описанию</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ N</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по названию или описанию</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ a</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по названию архива</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ k</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по ключевым словам</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ m</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по наличию маркера</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ s</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по статусу</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ u</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по возможности обновления</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>/ v</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Фильтрация списка пакетов по версиям</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><kbd>q</kbd></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Закрыть буфер <code>*Packages*</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">&#8201;&#8212;&#8201;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="package-operations-example"><a class="anchor" href="#package-operations-example"></a>Пример работы со списком пакетов</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Допустим, мы хотим установить несколько пакетов:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>doom-themes</code>;</p>
+</li>
+<li>
+<p><code>markdown-mode</code>;</p>
+</li>
+<li>
+<p><code>nerd-icons</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Мы можем пойти двумя путями:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Обновить список доступных пакетов с помощью <code>package-refresh-contents</code>, а затем три раза вызвать <code>package-install</code>.</p>
+</li>
+<li>
+<p>Открыть список доступных пакетов с помощью <code>package-list-packages</code>, найти нужные пакеты, отметить их, а затем запустить установку.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Очевидно, что при массовой установке пакетов второй способ предпочтительнее<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>Давайте прямо сейчас установим несколько пакетов, используя второй способ:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Выполните команду <code>package-list-packages</code> и дождитесь обновления списка доступных пакетов.</p>
+</li>
+<li>
+<p>Найдите строки с нужными пакетами.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Совет"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Пакеты в буфере <code>*Packages*</code> упорядочены по статусу и алфавиту, но также вы можете использовать для поиска фильтры.
+Например, чтобы найти пакет <code>doom-themes</code>, нажмите <kbd>/ n doom RET</kbd>.
+Для сброса фильтра нажмите <kbd>/ /</kbd>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Чтобы отметить пакет как устанавливаемый, переместите курсор к соответствующей строке и нажмите <kbd>i</kbd>.
+В первой колонке появится метка <code>I</code>.</p>
+</li>
+<li>
+<p>Отметьте все нужные пакеты.</p>
+</li>
+<li>
+<p>Для запуска выполнения назначенных операций нажмите <kbd>x</kbd>.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>В строке статуса будет выведен запрос на подтверждение:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Packages to install: 3 (nerd-icons-0.1.0 markdown-mode-2.6 doom-themes-2.3.0).  Proceed? (y or n)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Нажмите <kbd>y</kbd>.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>GNU Emacs запустит установку пакетов.
+Будет открыто новое окно, в котором отобразится ход компиляции кода пакетов.</p>
+</div>
+<div class="paragraph">
+<p>Когда установка пакетов будет закончена, в строке статуса будет выведено сообщение:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-text hljs" data-lang="text">Operation [ Install 3 ] finished</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Чтобы закрыть буфер <code>*Packages*</code>, нажмите <kbd>q</kbd>.</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Перезапускать GNU Emacs нет необходимости&#8201;&#8212;&#8201;все установленные пакеты готовы к работе.
+Чтобы убедиться в этом, выполните команду <code>load-theme</code>, указав название темы <code>doom-molokai</code>.</p>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Во время предыдущего выполнения <code>package-refresh-contents</code>.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Чуть позже разберёмся с автоматической установкой пакетов. Не торопите события.
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="archives.html">Архивы пакетов</a></span>
+  <span class="next"><a href="../glossary.html">Глоссарий</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104224581', 'ym');
+
+    ym(104224581, 'init', {ssr:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/104224581" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  </body>
+</html>

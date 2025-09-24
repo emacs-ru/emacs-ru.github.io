@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Основы :: GNU Emacs по-русски</title>
-    <link rel="canonical" href="https://emacs-ru.github.io/emacs/core/index.html">
-    <link rel="prev" href="../index.html">
-    <link rel="next" href="installation.html">
+    <title>Управление пакетами :: GNU Emacs по-русски</title>
+    <link rel="canonical" href="https://emacs-ru.github.io/emacs/packages/index.html">
+    <link rel="prev" href="../core/customize.html">
+    <link rel="next" href="archives.html">
     <meta name="generator" content="Antora 3.1.12">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -37,27 +37,39 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../index.html">Добро пожаловать!</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Основы</a>
+    <a class="nav-link" href="../core/index.html">Основы</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="installation.html">Установка</a>
+    <a class="nav-link" href="../core/installation.html">Установка</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="keys.html">Клавиши</a>
+    <a class="nav-link" href="../core/keys.html">Клавиши</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="commands.html">Команды</a>
+    <a class="nav-link" href="../core/commands.html">Команды</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="modes.html">Режимы</a>
+    <a class="nav-link" href="../core/modes.html">Режимы</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="store-settings.html">Хранение настроек</a>
+    <a class="nav-link" href="../core/store-settings.html">Хранение настроек</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="customize.html">Customize</a>
+    <a class="nav-link" href="../core/customize.html">Customize</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Управление пакетами</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="archives.html">Архивы пакетов</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="package.el.html">Использование <code>package.el</code></a>
   </li>
 </ul>
   </li>
@@ -68,19 +80,19 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../packages/index.html">Пакеты</a>
+    <a class="nav-link" href="index.html">Пакеты</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../packages/builtin/index.html">Встроенные пакеты</a>
+    <a class="nav-link" href="builtin/index.html">Встроенные пакеты</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../packages/builtin/rst.html"><code>rst.el</code></a>
+    <a class="nav-link" href="builtin/rst.html"><code>rst.el</code></a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../packages/builtin/which-key.html">which-key</a>
+    <a class="nav-link" href="builtin/which-key.html">which-key</a>
   </li>
 </ul>
   </li>
@@ -112,23 +124,52 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">GNU Emacs по-русски</a></li>
-    <li><a href="index.html">Основы</a></li>
+    <li><a href="index.html">Управление пакетами</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="file:///content/modules/ROOT/pages/core/index.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/emacs-ru/content/edit/main/modules/ROOT/pages/packages/index.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Основы</h1>
+<h1 class="page">Управление пакетами</h1>
 <div class="paragraph">
-<p>В этом разделе рассматриваются основы работы с GNU Emacs, а также даются описания встроенных функций и пакетов.</p>
+<p>Пакет&#8201;&#8212;&#8201;это аналог плагина или дополнения.</p>
+</div>
+<div class="paragraph">
+<p>Пакеты делятся на встроенные и сторонние.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Встроенный пакет</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Встроенный пакет входит в состав GNU Emacs и доступен без установки.
+Некоторые встроенные пакеты можно обновить из архива пакетов.</p>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Сторонний пакет</dt>
+<dd>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Сторонние пакеты недоступны до тех пор, пока не будут установлены.
+Существуют разные способы установки сторонних пакетов, но де-факто самый распространённый способ&#8201;&#8212;&#8201;использование архивов пакетов с помощью <code>package.el</code>.</p>
+</div>
+</div>
+</div>
+</dd>
+</dl>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="../index.html">Добро пожаловать!</a></span>
-  <span class="next"><a href="installation.html">Установка</a></span>
+  <span class="prev"><a href="../core/customize.html">Customize</a></span>
+  <span class="next"><a href="archives.html">Архивы пакетов</a></span>
 </nav>
 </article>
   </div>
